@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIfund - Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ... (Existing CSS styles) ... */
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="status-log">MI-Fund</h1>
+        <p>Your platform for funding student business ideas</p>
+    </header>
+
+    <section id="sign-in-form">
+        <h2>Sign In</h2>
+        <form id="signInForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2023 MIfund.com | White, Black, and Blue
+    </footer>
+
+    <script>
+        // JavaScript code to handle the sign-in form submission and redirection
+        const signInForm = document.getElementById("signInForm");
+
+        signInForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // In a real application, you would perform user authentication here
+            // For this example, we simulate a successful sign-in
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "your_username" && password === "your_password") {
+                // Redirect to the home page (replace "index.html" with your actual home page URL)
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIfund - Donate</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ... (Existing CSS styles) ... */
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="status-log">MI-Fund</h1>
+        <p>Your platform for funding student business ideas</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="request.html">Request Funding</a></li>
+        </ul>
+    </nav>
+
+    <section id="donation-feed">
+        <!-- JavaScript will populate this section with posts -->
+    </section>
+
+    <footer>
+        &copy; 2023 MIfund.com | White, Black, and Blue
+    </footer>
+
+    <script>
+        // JavaScript code to retrieve and display requests on the "Donate" page
+        const donationFeed = document.getElementById("donation-feed");
+        const requestModal = document.getElementById("requestModal");
+        const modalContent = document.getElementById("modalContent");
+
+        // Simulated funding requests (replace with your data)
+        const fundingRequests = [
+            { projectName: "Good goodies", description: "A food hub where you can get all the snacks", pitch: "Pitch for Project 1", fundingAmount: 1000, likes: 5 },
+            { projectName: "Art  Cafe", description: "web-dev company", pitch: "Pitch for Project 2", fundingAmount: 2000, likes: 3 },
+            // Add more requests here...
+        ];
+
+        // Generate posts for each funding request
+        fundingRequests.forEach((request, index) => {
+            const post = document.createElement("div");
+            post.classList.add("post");
+
+            const projectName = request.projectName;
+            const shortDescription = request.description.substring(0, 100); // Display a short description
+
+            post.innerHTML = `
+                <h3>${projectName}</h3>
+                <p>Description: ${shortDescription}...</p>
+                <button class="view-button" data-index="${index}">View Full Request</button>
+                <button class="donate-button">Donate</button>
+                <button class="like-button">Like (${request.likes})</button>
+            `;
+
+            donationFeed.appendChild(post);
+
+            // Event listener for clicking "View Full Request" buttons
+            const viewButton = post.querySelector(".view-button");
+            viewButton.addEventListener("click", () => {
+                displayFullRequest(request);
+            });
+        });
+
+        // Function to display full request details in the modal
+        function displayFullRequest(request) {
+            modalContent.innerHTML = `
+                <h2>${request.projectName}</h2>
+                <p><strong>Project Description:</strong> ${request.description}</p>
+                <p><strong>Pitch:</strong> ${request.pitch}</p>
+                <p><strong>Amount Needed:</strong> $${request.fundingAmount}</p>
+                <button class="donate-button">Donate</button>
+            `;
+
+            requestModal.style.display = "block";
+        }
+
+        // Event listener for closing the modal
+        const closeBtn = document.querySelector(".close");
+        closeBtn.addEventListener("click", () => {
+            requestModal.style.display = "none";
+        });
+    </script>
+</body>
+</html>

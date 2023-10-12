@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIfund</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>MIfund</h1>
+        <p>Your platform for funding student business ideas</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Request Funding</a></li>
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <h2>Welcome to MIfund</h2>
+        <p>Help turn student dreams into reality. Support innovative business ideas from our students or request funding for your project.</p>
+    </section>
+
+    <section id="signup">
+        <h2>Get Started</h2>
+        <p>Are you here to donate or ask for funding?</p>
+        <div class="buttons">
+            <a href="#" class="btn">Donate</a>
+            <a href="#" class="btn">Request Funding</a>
+        </div>
+    </section>
+
+    <section id="submission-parameters">
+        <h2>Submission Parameters</h2>
+        <p>Provide the following details to submit your funding request:</p>
+        <ul>
+            <li>Your Name</li>
+            <li>Email Address</li>
+            <li>Project Description</li>
+            <!-- Add more parameters as needed -->
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, please feel free to contact us using the form below:</p>
+        <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+    <footer>
+        &copy; 2023 MIfund.com | White, Black, and Blue
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
